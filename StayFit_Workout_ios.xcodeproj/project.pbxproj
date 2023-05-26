@@ -14,6 +14,14 @@
 		9A1E12162A20FC97006EF1F3 /* DetailWorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12152A20FC97006EF1F3 /* DetailWorkoutVC.swift */; };
 		9A1E12182A212F49006EF1F3 /* FirstScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12172A212F49006EF1F3 /* FirstScreenVC.swift */; };
 		9A1E121A2A213631006EF1F3 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12192A213631006EF1F3 /* LoginScreenVC.swift */; };
+		9A1E121C2A214670006EF1F3 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E121B2A214670006EF1F3 /* CreateAccountVC.swift */; };
+		9A1E121E2A21479A006EF1F3 /* BMICalScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E121D2A21479A006EF1F3 /* BMICalScreenVC.swift */; };
+		9A1E12202A214A53006EF1F3 /* WeightGainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E121F2A214A53006EF1F3 /* WeightGainVC.swift */; };
+		9A1E12222A214C7F006EF1F3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12212A214C7E006EF1F3 /* Extension.swift */; };
+		9A1E12252A214D3A006EF1F3 /* EventKieWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12242A214D3A006EF1F3 /* EventKieWrapper.swift */; };
+		9A1E12272A214D7B006EF1F3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12262A214D7B006EF1F3 /* Extension.swift */; };
+		9A1E12292A214E69006EF1F3 /* ScheduleScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E12282A214E69006EF1F3 /* ScheduleScreenVC.swift */; };
+		9A1E122B2A214F25006EF1F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E122A2A214F25006EF1F3 /* Timer.swift */; };
 		9A9712C42A1C9E9B000675F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712C32A1C9E9B000675F9 /* AppDelegate.swift */; };
 		9A9712C62A1C9E9B000675F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712C52A1C9E9B000675F9 /* SceneDelegate.swift */; };
 		9A9712CD2A1C9E9C000675F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9712CC2A1C9E9C000675F9 /* Assets.xcassets */; };
@@ -54,6 +62,14 @@
 		9A1E12152A20FC97006EF1F3 /* DetailWorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkoutVC.swift; sourceTree = "<group>"; };
 		9A1E12172A212F49006EF1F3 /* FirstScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenVC.swift; sourceTree = "<group>"; };
 		9A1E12192A213631006EF1F3 /* LoginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
+		9A1E121B2A214670006EF1F3 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		9A1E121D2A21479A006EF1F3 /* BMICalScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalScreenVC.swift; sourceTree = "<group>"; };
+		9A1E121F2A214A53006EF1F3 /* WeightGainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightGainVC.swift; sourceTree = "<group>"; };
+		9A1E12212A214C7E006EF1F3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9A1E12242A214D3A006EF1F3 /* EventKieWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKieWrapper.swift; sourceTree = "<group>"; };
+		9A1E12262A214D7B006EF1F3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9A1E12282A214E69006EF1F3 /* ScheduleScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleScreenVC.swift; sourceTree = "<group>"; };
+		9A1E122A2A214F25006EF1F3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		9A9712C02A1C9E9B000675F9 /* StayFit_Workout_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayFit_Workout_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9712C32A1C9E9B000675F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9712C52A1C9E9B000675F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1E12232A214CC7006EF1F3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E12242A214D3A006EF1F3 /* EventKieWrapper.swift */,
+				9A1E12262A214D7B006EF1F3 /* Extension.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		9A9712B72A1C9E9B000675F9 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +146,7 @@
 		9A9712C22A1C9E9B000675F9 /* StayFit_Workout_ios */ = {
 			isa = PBXGroup;
 			children = (
+				9A1E12232A214CC7006EF1F3 /* New Group */,
 				9A9713142A1D1656000675F9 /* View Models */,
 				9A9713072A1CFC07000675F9 /* View */,
 				9A9712F92A1CA712000675F9 /* API */,
@@ -131,6 +157,7 @@
 				9A9712CC2A1C9E9C000675F9 /* Assets.xcassets */,
 				9A9712CE2A1C9E9C000675F9 /* LaunchScreen.storyboard */,
 				9A9712D12A1C9E9C000675F9 /* Info.plist */,
+				9A1E12212A214C7E006EF1F3 /* Extension.swift */,
 			);
 			path = StayFit_Workout_ios;
 			sourceTree = "<group>";
@@ -159,6 +186,11 @@
 				9A1E12152A20FC97006EF1F3 /* DetailWorkoutVC.swift */,
 				9A1E12172A212F49006EF1F3 /* FirstScreenVC.swift */,
 				9A1E12192A213631006EF1F3 /* LoginScreenVC.swift */,
+				9A1E121B2A214670006EF1F3 /* CreateAccountVC.swift */,
+				9A1E121D2A21479A006EF1F3 /* BMICalScreenVC.swift */,
+				9A1E121F2A214A53006EF1F3 /* WeightGainVC.swift */,
+				9A1E12282A214E69006EF1F3 /* ScheduleScreenVC.swift */,
+				9A1E122A2A214F25006EF1F3 /* Timer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -335,14 +367,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1E121E2A21479A006EF1F3 /* BMICalScreenVC.swift in Sources */,
 				9A1E121A2A213631006EF1F3 /* LoginScreenVC.swift in Sources */,
 				9A1E120C2A20F444006EF1F3 /* WeightLossVC.swift in Sources */,
+				9A1E121C2A214670006EF1F3 /* CreateAccountVC.swift in Sources */,
+				9A1E12292A214E69006EF1F3 /* ScheduleScreenVC.swift in Sources */,
 				9A9712C42A1C9E9B000675F9 /* AppDelegate.swift in Sources */,
 				9A9712C62A1C9E9B000675F9 /* SceneDelegate.swift in Sources */,
+				9A1E12252A214D3A006EF1F3 /* EventKieWrapper.swift in Sources */,
+				9A1E12272A214D7B006EF1F3 /* Extension.swift in Sources */,
 				9A1E12162A20FC97006EF1F3 /* DetailWorkoutVC.swift in Sources */,
 				9A1E120E2A20F7D8006EF1F3 /* NetworkingManager.swift in Sources */,
+				9A1E12202A214A53006EF1F3 /* WeightGainVC.swift in Sources */,
+				9A1E12222A214C7F006EF1F3 /* Extension.swift in Sources */,
 				9AABA0182A20E20200F9ABB9 /* WorkoutResponse.swift in Sources */,
 				9A1E12122A20F907006EF1F3 /* WorkoutTableViewCell.swift in Sources */,
+				9A1E122B2A214F25006EF1F3 /* Timer.swift in Sources */,
 				9A1E12182A212F49006EF1F3 /* FirstScreenVC.swift in Sources */,
 				9A1E12102A20F8A0006EF1F3 /* Workout.swift in Sources */,
 			);
