@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-23.
+//  Created by Ridmi on 2023-05-06.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: WeighLossViewController())
+        window?.rootViewController = UINavigationController(rootViewController: FirstScreenVC())
         window?.makeKeyAndVisible()
     }
 

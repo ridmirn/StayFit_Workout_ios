@@ -2,12 +2,13 @@
 //  WeighLossViewController.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-26.
+//  Created by Ridmi on 2023-05-19.
 //
 
 import UIKit
+import SDWebImage
 
-class WeightLossViewController: UIViewController {
+class WeightLossVC: UIViewController {
 
     private var workouts = [Workout]()
   
@@ -47,7 +48,7 @@ class WeightLossViewController: UIViewController {
 }
 
 
-extension WeightLossViewController: UITableViewDataSource, UITableViewDelegate {
+extension WeightLossVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -61,7 +62,7 @@ extension WeightLossViewController: UITableViewDataSource, UITableViewDelegate {
         let workout = workouts[indexPath.row]
         cell.workoutTitleLabel.text = workout.workout_name
         cell.workoutSubTitleLabel.text = "Duration:\t" + workout.duration
-        cell.workoutImageView.sd_setImage(with: URL(string: workout.image))
+        cell.workoutimageView.sd_setImage(with: URL(string: workout.image))
         return cell
     }
     
@@ -79,7 +80,7 @@ extension WeightLossViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-private extension WeightLossViewController {
+private extension WeightLossVC{
     func setupUI() {
         title = "Weight Loss"
         navigationController?.navigationBar.prefersLargeTitles = true

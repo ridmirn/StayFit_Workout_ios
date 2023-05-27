@@ -2,7 +2,7 @@
 //  BMICalScreenVC.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-27.
+//  Created by Ridmi on 2023-05-10.
 //
 import UIKit
 //import Firebase
@@ -151,12 +151,12 @@ class BMICalScreenVC: UIViewController {
         let bmi = weight / (heightInMeter * heightInMeter)
         
         if bmi < 18.5 {
-            let resultVC = WeightGainVC(bmiValue:bmi)
+            let resultVC = HomepageWGVC(bmiValue:bmi)
             navigationController?.pushViewController(resultVC, animated: true)
         }
         
         else {
-            let resultVC = HomepageWLVC(bmiValue: bmi)
+            let resultVC = HomepageVC(bmiValue:bmi)
             navigationController?.pushViewController(resultVC, animated: true)
         }
        

@@ -2,16 +2,16 @@
 //  LoginScreenVC.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-27.
+//  Created by Ridmi on 2023-05-06.
 //
 
 import Foundation
 import UIKit
 
-//import FirebaseAuth
+import FirebaseAuth
 
 class LoginScreenVC: UIViewController {
-
+    
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -29,7 +29,7 @@ class LoginScreenVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
-       // textfield.placeholder = "Apple ID"
+        // textfield.placeholder = "Apple ID"
         textfield.textAlignment = .center
         return textfield
     }()
@@ -62,7 +62,7 @@ class LoginScreenVC: UIViewController {
         button.layer.masksToBounds = true
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
@@ -96,52 +96,52 @@ class LoginScreenVC: UIViewController {
             self.appleid.heightAnchor.constraint(equalToConstant: 50),
             self.appleid.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
         ])
-    
+        
     }
     
     func setPassword (){
         self.view.addSubview(password)
         self.password.backgroundColor = UIColor.FieldColor
         self.password.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-  
+        
         self.password.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.password.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
             self.password.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
-        self.password.heightAnchor.constraint(equalToConstant: 50),
-        self.password.topAnchor.constraint(equalTo: appleid.bottomAnchor, constant: 30),
+            self.password.heightAnchor.constraint(equalToConstant: 50),
+            self.password.topAnchor.constraint(equalTo: appleid.bottomAnchor, constant: 30),
         ])
-    
+        
     }
     
-func setLoginButton(){
-    self.view.addSubview(loginButton)
-    self.loginButton.backgroundColor = UIColor.AppColor
-    self.loginButton.setAttributedTitle(customLoginButton, for: .normal)
-   self.loginButton.addTarget(self, action:#selector(gotoProfileScreen), for: .touchUpInside)
-  
-    self.loginButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
-        loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
-        loginButton.heightAnchor.constraint(equalToConstant: 50),
-        loginButton.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 40),
+    func setLoginButton(){
+        self.view.addSubview(loginButton)
+        self.loginButton.backgroundColor = UIColor.AppColor
+        self.loginButton.setAttributedTitle(customLoginButton, for: .normal)
+        self.loginButton.addTarget(self, action:#selector(loginTapped), for: .touchUpInside)
+        
+        self.loginButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
+            loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            loginButton.topAnchor.constraint(equalTo: password.bottomAnchor, constant: 40),
         ])
     }
     
-func setNewAccountButton(){
-    self.view.addSubview(NewAccountButton)
-    self.NewAccountButton.backgroundColor = UIColor.AppColor
-    self.NewAccountButton.setAttributedTitle(customNewAccountButton, for: .normal)
-
-    self.NewAccountButton.addTarget(self, action:#selector(gotoNewAcoountScreen), for: .touchUpInside)
-  
-    self.NewAccountButton.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        NewAccountButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
-        NewAccountButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
-        NewAccountButton.heightAnchor.constraint(equalToConstant: 50),
-        NewAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+    func setNewAccountButton(){
+        self.view.addSubview(NewAccountButton)
+        self.NewAccountButton.backgroundColor = UIColor.AppColor
+        self.NewAccountButton.setAttributedTitle(customNewAccountButton, for: .normal)
+        
+        self.NewAccountButton.addTarget(self, action:#selector(gotoNewAcoountScreen), for: .touchUpInside)
+        
+        self.NewAccountButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NewAccountButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
+            NewAccountButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
+            NewAccountButton.heightAnchor.constraint(equalToConstant: 50),
+            NewAccountButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
         ])
     }
     
@@ -156,40 +156,41 @@ func setNewAccountButton(){
         
     ])
     @objc func gotoNewAcoountScreen (){
-           let newaccount = CreateAccountVC()
-            navigationController?.pushViewController(newaccount, animated:true)
-        }
+        let newaccount = CreateAccountVC()
+        navigationController?.pushViewController(newaccount, animated:true)
+    }
     
     @objc func gotoProfileScreen (){
         let userprofile = BMICalScreenVC()
-         navigationController?.pushViewController(userprofile, animated:true)
-     }
-    
-    //@objc func loginTapped(){
-      //  let email = appleid.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //let password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-       // Auth.auth().signIn(withEmail: email, password: password){
-         //   (result, error) in
-           // if error != nil{
-             //   self.showError("Invalid creditonals")
-            //}
-            //else{
-              ///  self.gotoProfileScreen()
-            ///}
-            
-            
-        //}
+        navigationController?.pushViewController(userprofile, animated:true)
     }
     
-   
+    @objc func loginTapped(){
+        let email = appleid.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        Auth.auth().signIn(withEmail: email, password: password){
+            (result, error) in
+            if error != nil{
+                self.showError("Invalid creditonals")
+            }
+            else{
+                self.gotoProfileScreen()
+            }
+            
+            
+        }
+    }
     
-//    func showError(_ message: String){
-//        DispatchQueue.main.async{
-//            let alterController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-//            alterController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-//            self.present (alterController, animated: true, completion: nil)
-//
-//        }
-//    }
-
+    
+    
+    func showError(_ message: String){
+        DispatchQueue.main.async{
+            let alterController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alterController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present (alterController, animated: true, completion: nil)
+            
+        }
+    }
+    
+}

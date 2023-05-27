@@ -2,10 +2,11 @@
 //  AppDelegate.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-23.
+//  Created by Ridmi on 2023-05-06.
 //
 
 import UIKit
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
+        
     }
 
     // MARK: UISceneSession Lifecycle

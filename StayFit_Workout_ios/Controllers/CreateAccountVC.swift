@@ -2,12 +2,12 @@
 //  CreateAccountVC.swift
 //  StayFit_Workout_ios
 //
-//  Created by Ridmi on 2023-05-27.
+//  Created by Ridmi on 2023-05-06.
 //
 
 import UIKit
-//import Firebase
-//import FirebaseAuth
+import Firebase
+import FirebaseAuth
 
 class CreateAccountVC: UIViewController {
 
@@ -125,7 +125,7 @@ class CreateAccountVC: UIViewController {
         self.view.addSubview(CreateNewAccountutton)
         self.CreateNewAccountutton.backgroundColor = UIColor.AppColor
         self.CreateNewAccountutton.setAttributedTitle(customNewAccountButton, for: .normal)
-        //self.CreateNewAccountutton.addTarget(self, action:#selector(creactAccountTapped), for: .touchUpInside)
+        self.CreateNewAccountutton.addTarget(self, action:#selector(creactAccountTapped), for: .touchUpInside)
       
         self.CreateNewAccountutton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -142,46 +142,46 @@ class CreateAccountVC: UIViewController {
         
     ])
     
-   // @objc func creactAccountTapped(){
-     //      let username = CAname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-       //    let email = CAappleid.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //   let password = CApassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-         
-           //Auth.auth().createUser(withEmail: email, password: password ){(result, err) in
-               
-             //  if err != nil {
-             
-             //      self.showError("error creating a user")
-              // }
-               //else{
-                 //  let db = Firestore.firestore()
-                  // db.collection("User_login").addDocument(data: ["name":username,"uid":result!.user.uid]) { (error) in
-                       
-                    //   if error != nil {
-                      //     self.showError("Error saving user data")
-                       //}
-                  // }
-                   ///hworkout
-                //   self.userProfile()
-               //}
-           
-          // }
-      // }
-       func showError(_ message: String){
-           DispatchQueue.main.async{
-               let alterController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-               alterController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-               self.present (alterController, animated: true, completion: nil)
-               
-           }
-       }
-       
-//       func userProfile(){
-//           let userprofile = UserProfileScreen()
-//            navigationController?.pushViewController(userprofile, animated:true)
-//
-//       }
-
+    @objc func creactAccountTapped(){
+        let username = CAname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let email = CAappleid.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = CApassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        Auth.auth().createUser(withEmail: email, password: password ){(result, err) in
+            
+            if err != nil {
+                
+                self.showError("error creating a user")
+            }
+            else{
+                let db = Firestore.firestore()
+                db.collection("User_login").addDocument(data: ["name":username,"uid":result!.user.uid]) { (error) in
+                    
+                    if error != nil {
+                        self.showError("Error saving user data")
+                    }
+                    
+                    self.userProfile()
+                }
+                
+            }
+        }
+    }
+        func showError(_ message: String){
+            DispatchQueue.main.async{
+                let alterController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+                alterController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present (alterController, animated: true, completion: nil)
+                
+            }
+        }
+        
+        func userProfile(){
+            let userprofile = BMICalScreenVC()
+            navigationController?.pushViewController(userprofile, animated:true)
+            
+        }
+        
     
    
 
