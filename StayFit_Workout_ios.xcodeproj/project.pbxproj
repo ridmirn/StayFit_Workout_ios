@@ -25,9 +25,6 @@
 		9A9712C62A1C9E9B000675F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712C52A1C9E9B000675F9 /* SceneDelegate.swift */; };
 		9A9712CD2A1C9E9C000675F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9712CC2A1C9E9C000675F9 /* Assets.xcassets */; };
 		9A9712D02A1C9E9C000675F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9712CE2A1C9E9C000675F9 /* LaunchScreen.storyboard */; };
-		9A9712DB2A1C9E9D000675F9 /* StayFit_Workout_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712DA2A1C9E9D000675F9 /* StayFit_Workout_iosTests.swift */; };
-		9A9712E52A1C9E9D000675F9 /* StayFit_Workout_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712E42A1C9E9D000675F9 /* StayFit_Workout_iosUITests.swift */; };
-		9A9712E72A1C9E9D000675F9 /* StayFit_Workout_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9712E62A1C9E9D000675F9 /* StayFit_Workout_iosUITestsLaunchTests.swift */; };
 		9A9712FE2A1CA9DE000675F9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9A9712FD2A1CA9DE000675F9 /* FirebaseAnalytics */; };
 		9A9713002A1CA9DF000675F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9A9712FF2A1CA9DF000675F9 /* FirebaseAuth */; };
 		9A9713022A1CA9DF000675F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9A9713012A1CA9DF000675F9 /* FirebaseFirestore */; };
@@ -82,10 +79,7 @@
 		9A9712CF2A1C9E9C000675F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A9712D12A1C9E9C000675F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A9712D62A1C9E9D000675F9 /* StayFit_Workout_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StayFit_Workout_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A9712DA2A1C9E9D000675F9 /* StayFit_Workout_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayFit_Workout_iosTests.swift; sourceTree = "<group>"; };
 		9A9712E02A1C9E9D000675F9 /* StayFit_Workout_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StayFit_Workout_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A9712E42A1C9E9D000675F9 /* StayFit_Workout_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayFit_Workout_iosUITests.swift; sourceTree = "<group>"; };
-		9A9712E62A1C9E9D000675F9 /* StayFit_Workout_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayFit_Workout_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9AABA0172A20E20200F9ABB9 /* WorkoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutResponse.swift; sourceTree = "<group>"; };
 		9E7DB62C2A21F56900611416 /* HomepageWGVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageWGVC.swift; sourceTree = "<group>"; };
 		9E7DB62E2A21F5D900611416 /* WeightGainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightGainVC.swift; sourceTree = "<group>"; };
@@ -137,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				9A9712C22A1C9E9B000675F9 /* StayFit_Workout_ios */,
-				9A9712D92A1C9E9D000675F9 /* StayFit_Workout_iosTests */,
-				9A9712E32A1C9E9D000675F9 /* StayFit_Workout_iosUITests */,
 				9A9712C12A1C9E9B000675F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,23 +161,6 @@
 				9A9712D12A1C9E9C000675F9 /* Info.plist */,
 			);
 			path = StayFit_Workout_ios;
-			sourceTree = "<group>";
-		};
-		9A9712D92A1C9E9D000675F9 /* StayFit_Workout_iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				9A9712DA2A1C9E9D000675F9 /* StayFit_Workout_iosTests.swift */,
-			);
-			path = StayFit_Workout_iosTests;
-			sourceTree = "<group>";
-		};
-		9A9712E32A1C9E9D000675F9 /* StayFit_Workout_iosUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A9712E42A1C9E9D000675F9 /* StayFit_Workout_iosUITests.swift */,
-				9A9712E62A1C9E9D000675F9 /* StayFit_Workout_iosUITestsLaunchTests.swift */,
-			);
-			path = StayFit_Workout_iosUITests;
 			sourceTree = "<group>";
 		};
 		9A9712F32A1C9FE5000675F9 /* Controllers */ = {
@@ -404,7 +379,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9712DB2A1C9E9D000675F9 /* StayFit_Workout_iosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,8 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A9712E52A1C9E9D000675F9 /* StayFit_Workout_iosUITests.swift in Sources */,
-				9A9712E72A1C9E9D000675F9 /* StayFit_Workout_iosUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
