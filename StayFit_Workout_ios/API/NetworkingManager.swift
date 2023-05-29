@@ -21,7 +21,7 @@ class APICaller {
     
     func getWeightLoss(completion: @escaping (Result<[Workout],Error>) -> Void){
         
-        guard let url = URL(string: "\(Constants.baseURL)/stayfit-workoutapp-ios/databases/(default)/documents/Weight_loss") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/stayfit-workoutapp-ios/databases/(default)/documents/Weight_Loss") else { return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else { return }
             

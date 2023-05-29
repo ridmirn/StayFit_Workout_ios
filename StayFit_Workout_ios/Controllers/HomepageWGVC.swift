@@ -2,21 +2,23 @@
 //  HomepageWGVC.swift
 //  StayFit_Workout_ios
 //
-//  Created by Pubudu Dilshan on 2023-05-17.
+//  Created by Ridmi on 2023-05-17.
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class HomepageWGVC: UIViewController {
 
         let titleLabel: UILabel = {
             let label = UILabel()
-            label.text = "Welcome Ridmi"
+            label.text = "Welcome"
             label.textAlignment = .left
-            label.textColor = .black
+            label.textColor = .white
             label.font = UIFont.boldSystemFont(ofSize: 24)
             return label
-            
+
         }()
         
         let  ScheduleButton: UIButton = {
@@ -48,7 +50,8 @@ class HomepageWGVC: UIViewController {
         let resultLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.textColor = .white
+            label.font = UIFont.boldSystemFont(ofSize: 20)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -67,7 +70,7 @@ class HomepageWGVC: UIViewController {
             //        view.addSubview(ScheduleButton)
             //        view.addSubview(WorkoutButton)
             //        view.addSubview(ProgressButton)
-            view.backgroundColor = .white
+            view.backgroundColor = .black
             view.addSubview(titleLabel)
             setLabel()
             setupViews()
@@ -102,7 +105,7 @@ class HomepageWGVC: UIViewController {
                 self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
             ])
-            
+
         }
         func setScheduleButton(){
             self.view.addSubview(ScheduleButton)
@@ -137,7 +140,7 @@ class HomepageWGVC: UIViewController {
             self.view.addSubview(ProgressButton)
             self.ProgressButton.backgroundColor = UIColor.AppColor
             self.ProgressButton.setAttributedTitle(customProgressButton, for: .normal)
-            //self.WorkoutButton.addTarget(self, action:#selector(gotoProfileScreen), for: .touchUpInside)
+            self.ProgressButton.addTarget(self, action:#selector(logoutButtonTapped), for: .touchUpInside)
             
             self.ProgressButton.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -158,11 +161,11 @@ class HomepageWGVC: UIViewController {
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)
         ])
         
-        let customProgressButton = NSMutableAttributedString(string: "Acivity", attributes: [
+        let customProgressButton = NSMutableAttributedString(string: "Log Out", attributes: [
             NSAttributedString.Key.foregroundColor : UIColor.black,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)
         ])
-        
+    
         
         @objc func gotoScheduleScreen (){
             let schedueScreen = ScheduleScreenVC()
@@ -173,6 +176,32 @@ class HomepageWGVC: UIViewController {
         let schedueScreen = WeightGainVC()
         navigationController?.pushViewController(schedueScreen, animated:true)
     }
+    
+    @objc func logoutButtonTapped(){
+        do{
+            try Auth.auth().signOut()
+            let loginscreen = LoginScreenVC()
+            navigationController?.pushViewController(loginscreen, animated: true)
+        }catch{
+            print("Error logging out")
+        }
     }
+    
+      
+    
+//    @objc func getUserName(){
+//        let name = titleLabel.text
+//
+//        let userID = Auth.auth().currentUser?.email
+//
+//        Firestore.firestore().collection("User_login").document(userID!).getDocument { snapshot, error in
+//            if error != nil {
+//                print ("Cannot fecth name")
+//            }else{
+//               let name = snapshot?.get ("name")
+//            }
+//        }
+//    }
+}
 
 

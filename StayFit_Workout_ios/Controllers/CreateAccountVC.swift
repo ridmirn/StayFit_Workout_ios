@@ -26,6 +26,7 @@ class CreateAccountVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         textfield.textAlignment = .center
         return textfield
     }()
@@ -36,6 +37,7 @@ class CreateAccountVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         textfield.textAlignment = .center
         return textfield
     }()
@@ -46,6 +48,7 @@ class CreateAccountVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         textfield.isSecureTextEntry = true
         textfield.textAlignment = .center
         return textfield
@@ -155,7 +158,7 @@ class CreateAccountVC: UIViewController {
             }
             else{
                 let db = Firestore.firestore()
-                db.collection("User_login").addDocument(data: ["name":username,"uid":result!.user.uid]) { (error) in
+                db.collection("User_login").addDocument(data: ["name":username,"email":email, "uid":result!.user.uid]) { (error) in
                     
                     if error != nil {
                         self.showError("Error saving user data")

@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class HomepageVC: UIViewController {
 
+    
         let titleLabel: UILabel = {
             let label = UILabel()
-            label.text = "Welcome Ridmi"
+            label.text = "Welcome"
             label.textAlignment = .left
-            label.textColor = .black
+            label.textColor = .white
             label.font = UIFont.boldSystemFont(ofSize: 24)
             return label
             
@@ -48,7 +51,8 @@ class HomepageVC: UIViewController {
         let resultLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 16)
+            label.textColor = .white
+            label.font = UIFont.boldSystemFont(ofSize: 20)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -67,7 +71,7 @@ class HomepageVC: UIViewController {
             //        view.addSubview(ScheduleButton)
             //        view.addSubview(WorkoutButton)
             //        view.addSubview(ProgressButton)
-            view.backgroundColor = .white
+            view.backgroundColor = .black
             view.addSubview(titleLabel)
             setLabel()
             setupViews()
@@ -137,7 +141,7 @@ class HomepageVC: UIViewController {
             self.view.addSubview(ProgressButton)
             self.ProgressButton.backgroundColor = UIColor.AppColor
             self.ProgressButton.setAttributedTitle(customProgressButton, for: .normal)
-            //self.WorkoutButton.addTarget(self, action:#selector(gotoProfileScreen), for: .touchUpInside)
+            self.ProgressButton.addTarget(self, action:#selector(logoutButtonTapped), for: .touchUpInside)
             
             self.ProgressButton.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -158,7 +162,7 @@ class HomepageVC: UIViewController {
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)
         ])
         
-        let customProgressButton = NSMutableAttributedString(string: "Acivity", attributes: [
+        let customProgressButton = NSMutableAttributedString(string: "Log Out", attributes: [
             NSAttributedString.Key.foregroundColor : UIColor.black,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)
         ])
@@ -172,6 +176,16 @@ class HomepageVC: UIViewController {
     @objc func gotoWorkoutScreen (){
         let schedueScreen = WeightLossVC()
         navigationController?.pushViewController(schedueScreen, animated:true)
+    }
+    
+    @objc func logoutButtonTapped(){
+        do{
+            try Auth.auth().signOut()
+            let loginscreen = LoginScreenVC()
+            navigationController?.pushViewController(loginscreen, animated: true)
+        }catch{
+            print("Error logging out")
+        }
     }
     }
 

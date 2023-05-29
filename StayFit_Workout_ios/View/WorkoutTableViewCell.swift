@@ -18,7 +18,7 @@ class WorkoutTableViewCell: UITableViewCell {
     var workoutTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         return label
     }()
     
@@ -27,8 +27,8 @@ class WorkoutTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 3
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = .black
         return label
     }()
     

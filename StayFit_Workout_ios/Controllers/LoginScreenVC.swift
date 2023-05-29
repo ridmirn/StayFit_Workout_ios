@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginScreenVC: UIViewController {
     
@@ -29,6 +30,7 @@ class LoginScreenVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         // textfield.placeholder = "Apple ID"
         textfield.textAlignment = .center
         return textfield
@@ -40,6 +42,7 @@ class LoginScreenVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         //textfield.textContentType = .password
         textfield.isSecureTextEntry = true
         textfield.textAlignment = .center

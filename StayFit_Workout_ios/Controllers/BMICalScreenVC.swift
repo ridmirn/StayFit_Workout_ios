@@ -20,15 +20,6 @@ class BMICalScreenVC: UIViewController {
         return label
         
     }()
-    let Age: UITextField = {
-        let textfield = UITextField()
-        textfield.keyboardType = .emailAddress
-        textfield.layer.cornerRadius = 8
-        textfield.layer.masksToBounds = true
-        textfield.layer.borderWidth = 1.0
-        textfield.textAlignment = .center
-        return textfield
-    }()
     
     let Weight: UITextField = {
         let textfield = UITextField()
@@ -36,6 +27,7 @@ class BMICalScreenVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         textfield.textAlignment = .center
         return textfield
     }()
@@ -45,6 +37,7 @@ class BMICalScreenVC: UIViewController {
         textfield.layer.cornerRadius = 8
         textfield.layer.masksToBounds = true
         textfield.layer.borderWidth = 1.0
+        textfield.textColor = .white
         textfield.textAlignment = .center
         return textfield
     }()
@@ -61,7 +54,6 @@ class BMICalScreenVC: UIViewController {
      
         self.view.backgroundColor = .black
         view.addSubview(titleLabel)
-        setAge()
         setWeight()
         setHeight()
         setUserProfileButton()
@@ -80,20 +72,6 @@ class BMICalScreenVC: UIViewController {
             self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
         ])
     }
-    func setAge (){
-        self.view.addSubview(Age)
-        self.Age.backgroundColor = UIColor.FieldColor
-        self.Age.attributedPlaceholder = NSAttributedString(string: "Age", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-  
-        self.Age.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.Age.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
-            self.Age.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
-            self.Age.heightAnchor.constraint(equalToConstant: 50),
-            self.Age.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-        ])
-    
-    }
     func setWeight (){
         self.view.addSubview(Weight)
         self.Weight.backgroundColor = UIColor.FieldColor
@@ -104,7 +82,7 @@ class BMICalScreenVC: UIViewController {
             self.Weight.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:  30),
             self.Weight.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:  -30),
             self.Weight.heightAnchor.constraint(equalToConstant: 50),
-            self.Weight.topAnchor.constraint(equalTo: Age.bottomAnchor, constant: 30),
+            self.Weight.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
         ])
     
     }

@@ -14,7 +14,7 @@ class DetailWorkoutVC: UIViewController {
     private var startButton: UIButton!
     
     private var timer: Timer?
-    private var remainingTime = 10
+    private var remainingTime: TimeInterval = 0
    // private var isPaused = false
     
     var workout: Workout?
@@ -23,13 +23,15 @@ class DetailWorkoutVC: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 70)
+        
         return imageView
     }()
     
     private let workoutTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textColor = .black
         return label
     }()
@@ -37,8 +39,8 @@ class DetailWorkoutVC: UIViewController {
     private let workoutSubTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = .black
         return label
     }()
     
@@ -74,17 +76,25 @@ class DetailWorkoutVC: UIViewController {
     }
     
     private func setupUI(){
+
+//        view.addSubview(countdownLabel)
         self.countdownLabel = UILabel()
         self.countdownLabel.textAlignment = .center
-        self.countdownLabel.font = UIFont.systemFont(ofSize: 60)
+        self.countdownLabel.font = UIFont.systemFont(ofSize: 40)
         // self.countdownLabel.backgroundColor = .white
         self.countdownLabel.textColor = .black
         self.countdownLabel.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(countdownLabel)
-        self.countdownLabel.topAnchor.constraint(equalTo: workoutSubTitleLabel.bottomAnchor, constant: 50)
-        self.countdownLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.countdownLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            countdownLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 120),
+            countdownLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            countdownLabel.widthAnchor.constraint(equalToConstant: 250),
+            countdownLabel.heightAnchor.constraint(equalToConstant: 70)
+        ])
+       // self.countdownLabel.topAnchor.constraint(equalTo: workoutSubTitleLabel.bottomAnchor, constant: 50)
+//        self.countdownLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        self.countdownLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
 
 
         self.startButton = UIButton(type: .system)
@@ -105,28 +115,45 @@ class DetailWorkoutVC: UIViewController {
     }
 
     @objc private func startButtonTapped(){
-        startCountDown()
+        guard let timeString = workoutSubTitleLabel.text,
+              let time = TimeInterval(timeString)  else {
+           print("Invalid")
+            return
+        }
+        
+        startTimer(time)
+       // startCountDown()
     }
     
-    private func startCountDown(){
-        startButton.isEnabled = false
+    private func startTimer(_ time: TimeInterval){
+        remainingTime = time
+        updateCountdownLabel()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc private func updateTime(){
+        remainingTime -= 1
+        
+        if remainingTime < 0 {
+            countdownLabel.text = "Well Done!"
+            stopTimer()
+        }else{
+            updateCountdownLabel()
+        }
+    }
+    
+    private func stopTimer(){
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+        timer = nil
     }
     
-    @objc private func updateCountDown(){
-        //if var remainingTime = Int(workoutSubTitleLabel.text ?? ""){
-            if remainingTime > 0 {
-                countdownLabel.text = "\(remainingTime)"
-                remainingTime -= 1
-            }else{
-                countdownLabel.text = "Done!"
-                startButton.isEnabled = true
-                timer?.invalidate()
-            }
-//        }else{
-//
-//            print("Invalid Value")
-//        }
+    private func updateCountdownLabel() {
+        //let minutes = Int(remainingTime) / 60
+        let seconds = Int(remainingTime) % 60
+        
+        countdownLabel.text = String(format: "%02d", seconds)
     }
+    
 }

@@ -2,7 +2,7 @@
 //  WeightGainVC.swift
 //  StayFit_Workout_ios
 //
-//  Created by Pubudu Dilshan on 2023-05-18.
+//  Created by Ridmi on 2023-05-18.
 //
 
 import UIKit
@@ -50,7 +50,7 @@ class WeightGainVC: UIViewController {
 
 extension WeightGainVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +61,7 @@ extension WeightGainVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(WorkoutTableViewCell.self)", for: indexPath) as! WorkoutTableViewCell
         let workout = workouts[indexPath.row]
         cell.workoutTitleLabel.text = workout.workout_name
-        cell.workoutSubTitleLabel.text = "Duration:\t" + workout.duration
+        cell.workoutSubTitleLabel.text = "Duration:\t" + workout.duration + "\t Seconds"
         cell.workoutimageView.sd_setImage(with: URL(string: workout.image))
         return cell
     }
